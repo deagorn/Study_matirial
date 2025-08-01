@@ -1,0 +1,72 @@
+/* Стилі для бокової панелі */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  background-color: #333;
+  color: white;
+  height: 100%;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  color: #4caf50;
+}
+
+/* Стилі для основного контенту */
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+h1,
+h2,
+h3 {
+  color: #333;
+}
+
+.content-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+/* Стилі для тестів */
+form {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
