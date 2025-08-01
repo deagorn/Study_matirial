@@ -22,3 +22,7 @@
 .toggle-menu:hover {
   color: blue;
 }
+
+.hidden {
+  display: none !important;
+}
