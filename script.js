@@ -24,21 +24,10 @@ fetch("/sidebar.html") // Використовуємо абсолютний шл
 
 // Function to hide learning menu if not on page1.html
 function hideLearningMenuIfNotPage1() {
+  // CSS handles the hiding/showing, but we can add additional logic here if needed
   var currentPage = window.location.pathname.split("/").pop();
-  var learningMenu = document.getElementById("learning-menu");
-
   console.log("Current page:", currentPage);
-  console.log("Learning menu element:", learningMenu);
 
-  if (learningMenu) {
-    if (currentPage !== "page1.html") {
-      console.log("Hiding learning menu - not on page1.html");
-      learningMenu.classList.add("hidden");
-    } else {
-      console.log("Showing learning menu - on page1.html");
-      learningMenu.classList.remove("hidden");
-    }
-  } else {
-    console.log("Learning menu element not found!");
-  }
+  // The CSS rules will automatically show/hide based on body class
+  // This function now just logs for debugging
 }

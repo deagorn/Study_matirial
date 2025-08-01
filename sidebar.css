@@ -5,8 +5,10 @@
 }
 
 .sidebar li {
-  margin: 10px 0;
+  margin: 8px 0; /* Зменшуємо з 10px до 8px */
 }
+
+/* Стилі для посилань уже визначені в style.css, тому видаляємо дублікати */
 
 .dropdown-menu {
   display: none; /* Список спочатку прихований */
@@ -21,6 +23,16 @@
 
 .toggle-menu:hover {
   color: blue;
+}
+
+/* Hide learning menu by default, show only on page1 */
+#learning-menu {
+  display: none;
+}
+
+/* Show learning menu only on page1 */
+.page1 #learning-menu {
+  display: block;
 }
 
 .hidden {

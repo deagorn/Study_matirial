@@ -1,4 +1,9 @@
-/* Стилі для бокової панелі */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -28,15 +33,13 @@
   color: #4caf50;
 }
 
-/* Стилі для основного контенту */
 .main-content {
   margin-left: 220px;
   padding: 20px;
 }
 
 h1,
-h2,
-h3 {
+h2 {
   color: #333;
 }
 
@@ -51,22 +54,4 @@ pre {
   padding: 10px;
   border-radius: 5px;
   overflow-x: auto;
-}
-
-/* Стилі для тестів */
-form {
-  margin-top: 20px;
-}
-
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
 }
