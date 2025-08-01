@@ -1,54 +1,151 @@
+/* Глобальні стилі */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f9; /* Світло-сірий фон як на Introduction */
+  line-height: 1.6;
 }
 
+/* Стилі для бокової панелі */
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 280px;
   background-color: #333;
   color: white;
   height: 100%;
-  padding: 20px;
+  padding: 15px 8px;
 }
 
 .sidebar ul {
-  list-style-type: none;
+  list-style-type: none !important; /* Додаємо !important для гарантії */
   padding: 0;
+  margin: 0; /* Додаємо margin: 0 */
 }
 
 .sidebar ul li {
   margin: 10px 0;
+  list-style: none !important; /* Гарантуємо відсутність маркерів */
 }
 
 .sidebar ul li a {
   color: white;
   text-decoration: none;
+  font-size: 15px;
+  line-height: 1.4;
+  display: block;
+  word-break: break-word;
+  hyphens: auto;
+  padding: 3px 0; /* Базовий padding для рівномірності */
+  transition: all 0.3s ease; /* Плавний перехід для всіх змін */
+  border-radius: 4px; /* Базове заокруглення */
 }
 
 .sidebar ul li a:hover {
-  color: #4caf50;
+  color: #16a085;
+  background-color: rgba(22, 160, 133, 0.15); /* Легкий фон з кольором hover */
+  padding: 5px 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease; /* Плавний перехід */
+  transform: translateX(3px); /* Легке зміщення вправо */
 }
 
+/* Стиль для активної сторінки */
+.sidebar ul li a.active {
+  color: #e67e22;
+  font-weight: bold;
+  background-color: rgba(230, 126, 34, 0.1); /* Легкий фон */
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+
+/* Hide learning menu by default, show only on page1 */
+#learning-menu {
+  display: none;
+}
+
+/* Show learning menu only on page1 */
+.page1 #learning-menu {
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  margin-left: 0px !important;
+  padding-left: 20px !important;
+  border-left: 2px solid #16a085; /* Додаємо лінію зліва для візуального розділення */
+  margin-top: 8px; /* Збільшуємо відступ зверху */
+  padding-top: 5px; /* Додаємо відступ зверху всередині */
+}
+
+/* Стилі для елементів випадного меню */
+.dropdown-menu li {
+  margin: 6px 0; /* Трохи менші відступи для підменю */
+  margin-left: 0 !important; /* Скидаємо margin елементів */
+}
+
+.dropdown-menu li a {
+  font-size: 13px; /* Трохи менший шрифт для підменю */
+  color: #ccc; /* Трохи світліший колір */
+  margin-left: 0 !important; /* Скидаємо margin посилань */
+}
+
+.dropdown-menu li a:hover {
+  color: #16a085;
+  background-color: rgba(22, 160, 133, 0.1);
+  transform: translateX(2px); /* Менше зміщення для підменю */
+}
+
+.toggle-menu {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.toggle-menu:hover {
+  color: #16a085; /* Змінюємо на той самий колір hover */
+  background-color: rgba(22, 160, 133, 0.15);
+  padding: 5px 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Стилі для основного контенту */
 .main-content {
-  margin-left: 220px;
-  padding: 20px;
+  margin: 20px auto; /* Автоматичне центрування з відступами зверху/знизу */
+  max-width: 800px; /* Обмежуємо ширину */
+  padding: 20px 40px; /* Внутрішні відступи */
+  background-color: #fff; /* Білий фон як на Introduction */
+  border-radius: 10px; /* Заокруглені кути */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тінь як на Introduction */
+  /* Просто додаємо відступ зліва для sidebar */
+  margin-left: calc(
+    280px + (100vw - 280px - 800px) / 2
+  ); /* Центрування з урахуванням sidebar */
+  margin-right: auto;
 }
 
+/* Загальні стилі для заголовків */
 h1,
-h2 {
+h2,
+h3 {
   color: #333;
 }
 
+/* Стилі для зображень */
 .content-image {
   max-width: 100%;
   height: auto;
   margin-top: 20px;
 }
 
+/* Стилі для code блоків */
 pre {
   background-color: #f4f4f4;
   padding: 10px;
