@@ -32,7 +32,6 @@ fetch("/sidebar.html") // Використовуємо абсолютний шл
 function hideLearningMenuIfNotPage1() {
   // CSS handles the hiding/showing, but we can add additional logic here if needed
   var currentPage = window.location.pathname.split("/").pop();
-  console.log("Current page:", currentPage);
 
   // The CSS rules will automatically show/hide based on body class
   // This function now just logs for debugging
@@ -78,6 +77,5 @@ function highlightActivePage() {
   // Add active class if link found
   if (activeLink) {
     activeLink.classList.add("active");
-    console.log("Active page highlighted:", currentPage);
   }
 }

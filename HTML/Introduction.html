@@ -38,11 +38,15 @@
           пошуку в Google, система обробляє твій запит і знаходить потрібну
           інформацію. Це робить саме <span class="highlight">Back End</span>.
         </p>
-
         <p>
           Веб-розробники, які займаються обома цими частинами, називаються
           <strong>Full Stack Developers</strong>.
         </p>
+        <img
+          src="../img/cat1.png"
+          alt="Веб-програмування"
+          class="content-image"
+        />
 
         <h2>Чим займається Full Stack Developer?</h2>
         <ul>
@@ -64,7 +68,11 @@
             <span class="highlight">Back End</span>.
           </li>
         </ul>
-
+        <img
+          src="../img/cat2.png"
+          alt="Веб-програмування"
+          class="content-image"
+        />
         <h2>Які навички потрібні Full Stack Developer?</h2>
 
         <h3>Hard Skills (технічні навички)</h3>
@@ -117,10 +125,111 @@
           навички йому потрібні. Ці знання будуть корисні для твоїх перших
           кроків у веб-розробці!
         </p>
+
+        <!-- Тестування знань -->
+        <div class="quiz-section">
+          <h2>Перевір свої знання!</h2>
+
+          <!-- Запитання 1 -->
+          <div class="question-block">
+            <h3>1. Що робить Full Stack Developer?</h3>
+            <div class="answers">
+              <label class="answer-option">
+                <input type="radio" name="q1" value="A" />
+                <span class="answer-text"
+                  >A) Пише тільки код для веб-сайтів</span
+                >
+              </label>
+              <label class="answer-option">
+                <input type="radio" name="q1" value="B" />
+                <span class="answer-text"
+                  >B) Створює як зовнішню частину програми (Front End), так і
+                  внутрішню частину (Back End)</span
+                >
+              </label>
+              <label class="answer-option">
+                <input type="radio" name="q1" value="C" />
+                <span class="answer-text">C) Тільки тестує веб-сайти</span>
+              </label>
+              <label class="answer-option">
+                <input type="radio" name="q1" value="D" />
+                <span class="answer-text">D) Тільки працює з серверами</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Запитання 2 -->
+          <div class="question-block">
+            <h3>2. Що таке Front End?</h3>
+            <div class="answers">
+              <label class="answer-option">
+                <input type="radio" name="q2" value="A" />
+                <span class="answer-text"
+                  >A) Те, що бачить користувач на сайті чи в додатку, наприклад,
+                  кнопки та меню</span
+                >
+              </label>
+              <label class="answer-option">
+                <input type="radio" name="q2" value="B" />
+                <span class="answer-text"
+                  >B) Частина сайту, що обробляє запити користувача</span
+                >
+              </label>
+              <label class="answer-option">
+                <input type="radio" name="q2" value="C" />
+                <span class="answer-text"
+                  >C) База даних, що зберігає всю інформацію</span
+                >
+              </label>
+              <label class="answer-option">
+                <input type="radio" name="q2" value="D" />
+                <span class="answer-text"
+                  >D) Коли сайт працює за лаштунками</span
+                >
+              </label>
+            </div>
+          </div>
+
+          <!-- Запитання 3 -->
+          <div class="question-block">
+            <h3>3. Які з навичок є важливими для Full Stack Developer?</h3>
+            <div class="answers">
+              <label class="answer-option">
+                <input type="radio" name="q3" value="A" />
+                <span class="answer-text">A) Знання Photoshop</span>
+              </label>
+              <label class="answer-option">
+                <input type="radio" name="q3" value="B" />
+                <span class="answer-text"
+                  >B) Уміння працювати в команді та знання Git</span
+                >
+              </label>
+              <label class="answer-option">
+                <input type="radio" name="q3" value="C" />
+                <span class="answer-text"
+                  >C) Вміння писати тільки текст для веб-сайтів</span
+                >
+              </label>
+              <label class="answer-option">
+                <input type="radio" name="q3" value="D" />
+                <span class="answer-text"
+                  >D) Тільки знання програмування на Python</span
+                >
+              </label>
+            </div>
+          </div>
+
+          <button class="submit-quiz" onclick="checkQuiz()">
+            Перевірити відповіді
+          </button>
+
+          <div id="quiz-result" class="quiz-result" style="display: none"></div>
+        </div>
       </div>
     </div>
 
     <script src="../script.js"></script>
     <script src="../HTML/sidebar.js"></script>
+    <script src="../js/Introduction.js"></script>
   </body>
 </html>
