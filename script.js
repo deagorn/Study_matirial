@@ -17,6 +17,9 @@ fetch(getSidebarPath())
   .then((data) => {
     document.getElementById("sidebar-container").innerHTML = data;
 
+    // Fix sidebar links after loading
+    fixSidebarLinks();
+
     // After sidebar is loaded, check if we need to hide the learning menu
     // Add a small delay to ensure DOM is fully updated
     setTimeout(() => {
@@ -27,6 +30,42 @@ fetch(getSidebarPath())
   .catch((error) => {
     console.error("Error loading sidebar:", error);
   });
+
+// Function to fix sidebar links based on current location
+function fixSidebarLinks() {
+  var currentPath = window.location.pathname;
+  var isInRoot = !currentPath.includes("/HTML/");
+
+  // Get all sidebar links
+  var sidebarLinks = document.querySelectorAll(".sidebar a[href]");
+
+  sidebarLinks.forEach(function (link) {
+    var href = link.getAttribute("href");
+
+    // Skip anchor links and javascript links
+    if (href.startsWith("#") || href.startsWith("javascript:")) {
+      return;
+    }
+
+    if (isInRoot) {
+      // If we're in root (index.html), fix the links
+      if (href === "../HTML/Introduction.html") {
+        link.setAttribute("href", "./HTML/Introduction.html");
+      } else if (href === "../HTML/page1.html") {
+        link.setAttribute("href", "./HTML/page1.html");
+      } else if (href === "../HTML/page2.html") {
+        link.setAttribute("href", "./HTML/page2.html");
+      } else if (href === "../HTML/page3.html") {
+        link.setAttribute("href", "./HTML/page3.html");
+      }
+      // Keep '../index.html' as is - it's incorrect for root but won't be used
+      if (href === "../index.html") {
+        link.setAttribute("href", "./index.html");
+      }
+    }
+    // If we're in HTML folder, links should work as they are
+  });
+}
 
 // Function to hide learning menu if not on page1.html
 function hideLearningMenuIfNotPage1() {
@@ -54,23 +93,23 @@ function highlightActivePage() {
   // Check for specific pages
   if (currentPage === "index.html" || currentPath.endsWith("/")) {
     activeLink = document.querySelector(
-      '.sidebar a[href="../index.html"], .sidebar a[href="index.html"]'
+      '.sidebar a[href="./index.html"], .sidebar a[href="../index.html"]'
     );
   } else if (currentPage === "Introduction.html") {
     activeLink = document.querySelector(
-      '.sidebar a[href="../HTML/Introduction.html"]'
+      '.sidebar a[href="./HTML/Introduction.html"], .sidebar a[href="../HTML/Introduction.html"]'
     );
   } else if (currentPage === "page1.html") {
     activeLink = document.querySelector(
-      '.sidebar a[href="../HTML/page1.html"]'
+      '.sidebar a[href="./HTML/page1.html"], .sidebar a[href="../HTML/page1.html"]'
     );
   } else if (currentPage === "page2.html") {
     activeLink = document.querySelector(
-      '.sidebar a[href="../HTML/page2.html"]'
+      '.sidebar a[href="./HTML/page2.html"], .sidebar a[href="../HTML/page2.html"]'
     );
   } else if (currentPage === "page3.html") {
     activeLink = document.querySelector(
-      '.sidebar a[href="../HTML/page3.html"]'
+      '.sidebar a[href="./HTML/page3.html"], .sidebar a[href="../HTML/page3.html"]'
     );
   }
 
