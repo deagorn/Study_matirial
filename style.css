@@ -61,13 +61,14 @@ body {
   border-radius: 4px;
 }
 
-/* Hide learning menu by default, show only on page1 */
+/* Hide learning menu by default, show only on page1 and introduction */
 #learning-menu {
   display: none;
 }
 
-/* Show learning menu only on page1 */
-.page1 #learning-menu {
+/* Show learning menu on page1 and introduction pages */
+.page1 #learning-menu,
+.introduction #learning-menu {
   display: block;
 }
 
