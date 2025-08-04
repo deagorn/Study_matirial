@@ -1,5 +1,18 @@
 // Завантаження бокової панелі на сторінки
-fetch("/HTML/sidebar.html") // Використовуємо абсолютний шлях від кореня сайту
+// Визначаємо правильний шлях залежно від поточної сторінки
+function getSidebarPath() {
+  var currentPath = window.location.pathname;
+
+  // Якщо ми знаходимося в папці HTML
+  if (currentPath.includes("/HTML/")) {
+    return "./sidebar.html";
+  } else {
+    // Якщо ми в корені
+    return "./HTML/sidebar.html";
+  }
+}
+
+fetch(getSidebarPath())
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("sidebar-container").innerHTML = data;
@@ -13,19 +26,6 @@ fetch("/HTML/sidebar.html") // Використовуємо абсолютний
   })
   .catch((error) => {
     console.error("Error loading sidebar:", error);
-    // Try alternative path if absolute path fails
-    fetch("/HTML/sidebar.html")
-      .then((response) => response.text())
-      .then((data) => {
-        document.getElementById("sidebar-container").innerHTML = data;
-        setTimeout(() => {
-          hideLearningMenuIfNotPage1();
-          highlightActivePage(); // Додаємо підсвічування активної сторінки
-        }, 100);
-      })
-      .catch((error2) =>
-        console.error("Error loading sidebar with relative path:", error2)
-      );
   });
 
 // Function to hide learning menu if not on page1.html
